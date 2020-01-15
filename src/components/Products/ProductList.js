@@ -14,5 +14,4 @@ const ProductList = ({ title, products }) => {
     </section>
   );
 }
-
 export default ProductList;
