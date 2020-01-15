@@ -13,7 +13,7 @@ import Products from './pages/Products';
 //components
 import Header from './components/Header'
 function App() {
-  return <Router>
+  return <Router basename="/react-tech-store">
     <Header />
     <Switch>
       <Route exact path="/"><Home /></Route>
