@@ -1,6 +1,5 @@
 import React from "react";
-
-export default function Hero({ children }) {
+const Hero = ({ children }) => {
   return <div className="hero">
     <div className="banner">
       <h1>think. code, deploy</h1>
@@ -8,4 +7,5 @@ export default function Hero({ children }) {
       {children}
     </div>
   </div>;
-}
+};
+export default Hero;

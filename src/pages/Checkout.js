@@ -1,5 +1,8 @@
 import React from "react";
 
-export default function Checkout() {
+const Checkout = () => {
   return <h1>hello from checkout page</h1>;
 }
+
+
+export default Checkout

@@ -11,21 +11,25 @@ import Login from './pages/Login';
 import ProductDetails from './pages/ProductDetails';
 import Products from './pages/Products';
 //components
-import Header from './components/Header'
+import Header from './components/Header';
+import Alert from './components/Alert';
+import PrivateRoute from './components/PrivateRoute';
 function App() {
   return <Router basename="/react-tech-store">
     <Header />
+    <Alert />
     <Switch>
       <Route exact path="/"><Home /></Route>
       <Route path="/about"><About /></Route>
       <Route path="/cart"><Cart /></Route>
-      <Route path="/checkout"><Checkout /></Route>
+      <PrivateRoute path="/checkout">
+        <Checkout />
+      </PrivateRoute>
       <Route path="/login"><Login /></Route>
       <Route exact path="/products"><Products /></Route>
       <Route path="/products/:id" children={<ProductDetails />}></Route>
       <Route path="*"><Error /></Route>
     </Switch>
   </Router>;
-}
-
+};
 export default App;

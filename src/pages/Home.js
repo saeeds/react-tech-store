@@ -2,8 +2,7 @@ import React, { Fragment } from "react";
 import Hero from '../components/Hero';
 import { Link } from 'react-router-dom';
 import FeaturedProducts from '../components/Products/FeaturedProducts';
-
-export default function Home() {
+const Home = () => {
   return <Fragment>
     <Hero>
       <Link to='/products' className="btn btn-primary btn-hero">
@@ -13,3 +12,4 @@ export default function Home() {
     <FeaturedProducts />
   </Fragment>;
 }
+export default Home;

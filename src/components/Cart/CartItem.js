@@ -1,7 +1,6 @@
 import React from "react";
 import { CartContext } from '../../context/cart';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
-
 const CartItem = ({ id, image, title, price, amount }) => {
   const { removeItem, increaseAmount, decreaseAmount } = React.useContext(CartContext);
   return (<article className="cart-item">
@@ -17,6 +16,5 @@ const CartItem = ({ id, image, title, price, amount }) => {
       <button type="button" className="cart-btn amount-btn" onClick={() => { decreaseAmount(id, amount) }}><FaAngleDown /></button>
     </div>
   </article>);
-}
-
+};
 export default CartItem;
