@@ -1,2 +1,2 @@
 //URL
-export default "http://localhost:1337";
+export default "https://tech-store-api.herokuapp.com";
