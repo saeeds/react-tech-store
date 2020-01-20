@@ -14,10 +14,12 @@ import Products from './pages/Products';
 import Header from './components/Header';
 import Alert from './components/Alert';
 import PrivateRoute from './components/PrivateRoute';
+import ScrollButton from './components/ScrollButton';
 function App() {
   return <Router basename="/react-tech-store">
     <Header />
     <Alert />
+    <ScrollButton />
     <Switch>
       <Route exact path="/"><Home /></Route>
       <Route path="/about"><About /></Route>

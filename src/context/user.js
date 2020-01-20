@@ -1,15 +1,20 @@
 import React from 'react';
-
 const UserContext = React.createContext();
-
 const getUserFromLocalStorage = () => {
   return localStorage.getItem('user') ?
     JSON.parse(localStorage.getItem('user'))
     : { username: null, token: null }
 }
 const UserProvider = ({ children }) => {
-
   const [user, setUser] = React.useState(getUserFromLocalStorage());
+  const [height, setHeight] = React.useState(0);
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setHeight(window.pageYOffset);
+    });
+    return () => window.removeEventListener('scroll', () => { });
+  });
 
   const userLogin = user => {
     setUser(user);
@@ -34,7 +39,8 @@ const UserProvider = ({ children }) => {
   const hideAlert = () => {
     setAlert({ ...alert, show: false });
   }
-  return (<UserContext.Provider value={{ user, userLogin, userLogout, alert, showAlert, hideAlert }}>
+
+  return (<UserContext.Provider value={{ user, userLogin, userLogout, alert, showAlert, hideAlert, height }}>
     {children}
   </UserContext.Provider>);
 };
