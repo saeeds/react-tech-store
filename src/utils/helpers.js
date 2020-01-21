@@ -19,3 +19,17 @@ export const featuredProducts = (data) => {
   });
 };
 
+
+//paginate
+export const paginate = (products) => {
+  const itemsPerPage = 12;
+  const numberOfPage = Math.ceil(products.length / itemsPerPage);
+  // const newProducts = Array.from({ length: numberOfPage }, () => {
+  //   return products.splice(0, itemsPerPage);
+  // }) mutate the same array;
+  const newProducts = Array.from({ length: numberOfPage }, (_, index) => {
+    const start = index * itemsPerPage;
+    return products.slice(start, start + itemsPerPage);
+  })
+  return newProducts;
+}
